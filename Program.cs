@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 class Program
 {
     public static Tree<string> rank = new Tree<string>();
     public static Stack<string> stackuser = new Stack<string>();
-    public static Stack<string> stackpreson = new Stack<string>();
+
 
     public static string InputName(){
         string name = Console.ReadLine();
@@ -16,13 +16,10 @@ class Program
     }
 
     public static void PushTree(string inputname){
-        TreeNode<string> node = null;
-
+        
         int number = InputNumber();
         if(number != 0){
-
-            stackpreson.Push(inputname);
-
+            
             string name1 = InputName();
             rank.AddChildX(inputname,name1);
             PushTree(name1);
@@ -61,8 +58,8 @@ class Program
         Console.Write("Input : ");
         string final = Console.ReadLine();
 
-        Console.WriteLine("Output ");
         Console.WriteLine("____________________________________________________");
+        Console.WriteLine("Output :");
 
         Stack<string> stacksearch =  rank.GetStackpreson(Output(final));
 
@@ -75,6 +72,7 @@ class Program
             }
         }
 
+        //ไว้เช็คในคนใน tree
         // Console.WriteLine("Welcome to loop for Tree");
         // for(int i =0 ; i < rank.GetLength() ; i++){
         //     //Console.WriteLine(rank.GetX("kim1"));
